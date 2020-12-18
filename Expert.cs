@@ -8,11 +8,17 @@ namespace Company
 {
     public class Expert:Employee
     {
-        protected const int k = 0;
-
+        
+        private const int expertSuccessRate = 1;
+        public Expert(string names, string type) : base()
+        {
+            this.names = names;
+            this.type = type;
+            
+        }
         public override void Execute()
         {
-            if (k == 0)
+            if (expertSuccessRate == 1)
             {
                 Console.WriteLine("Executed by an Expert");
             }

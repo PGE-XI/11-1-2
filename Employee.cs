@@ -10,11 +10,17 @@ namespace Company
     {
         
         protected int employeeID;
-        protected string employeeFirstName;
-        protected string employeeLastName;
+        protected string names;
         protected string type;
         protected int successRate = 0;
-        
+        protected double k;
+        protected Manager manager;
+        public Manager Manager { get; set; }
+
+        public double K { get; set; }
+
+        public string Names { get; set; }
+
         public abstract void Execute();
         public abstract int SuccessRate(); 
         

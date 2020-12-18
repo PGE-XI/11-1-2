@@ -8,25 +8,29 @@ namespace Company
 {
     public class Worker:Employee
     {
-        protected int k;
-        public  int K { get; set; }
-        protected int numJobsDone=0;
-        public Worker(int k)
+        protected int successRate;
+        
+        public  int successrate
         {
-            this.k = k;
+            get { return successRate; }
+            set { successRate = value; }
         }
-        public Worker(string employeeFirstName, string employeeLastName, string type, int k, int numJobsDone):base()
+        protected int numJobsDone=0;
+        public Worker(int successRate)
         {
-            this.employeeFirstName = employeeFirstName;
-            this.employeeLastName = employeeLastName;
+            this.successRate = successRate;
+        }
+        public Worker(string names, string type, int successRate, int numJobsDone):base()
+        {
+            this.names = names;
             this.type = type;
-            this.k = k;
+            this.successRate = successRate;
             this.numJobsDone = numJobsDone;
         }
         public override void Execute()
         {
             
-            if (k==0)
+            if (successRate==1)
             {
                 Console.WriteLine("Executed successfully");
                 numJobsDone++;
@@ -48,6 +52,7 @@ namespace Company
                 return numJobsDone;
             }
             else return 0;
+            
         }
     }
 }
